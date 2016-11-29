@@ -56,6 +56,16 @@ body {
 	background-image: url("images/hitmarker.png");
 }
 
+.eye {
+	z-index: 10000;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 #spacebar {
 	width: 30%;
 	
@@ -77,4 +87,10 @@ body {
 	width: 100%;
 	text-align: center;
 	
+}
+
+#three {
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
