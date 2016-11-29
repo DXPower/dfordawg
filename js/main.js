@@ -21,7 +21,7 @@ $(document).ready(function() {
 		hitmarker.clone().appendTo(document.body).css({'position' : 'absolute', 'left' : positionLeft, 'top' : positionTop}).addClass("hitmarker").removeClass("disabled");
 		hitmarkerAudio.play();
 		
-		if ($(this).attr("id") == "spacebar") {
+		if (e.target.id == "spacebar") {
 			reset();
 		}
 		
@@ -30,32 +30,32 @@ $(document).ready(function() {
 	function disableDragging(e) {
 		e.preventDefault();	
 	}
-});
+	
+	function reset() {
+		var hitmarkers = $(".hitmarker");
 
-function reset() {
-	var hitmarkers = $(".hitmarker");
-			
-	console.log(hitmarkers.length);
+		console.log(hitmarkers.length);
 
-	for (var i = 0; i < hitmarkers.length; i++) {
-		console.log(i);
-		if (hitmarkers[i] != undefined) {
-			if (!$(hitmarkers[i]).hasClass("disabled")) {
-				hitmarkers[i].remove();
+		for (var i = 0; i < hitmarkers.length; i++) {
+			console.log(i);
+			if (hitmarkers[i] != undefined) {
+				if (!$(hitmarkers[i]).hasClass("disabled")) {
+					hitmarkers[i].remove();
+				} else {
+					i--;	
+				}
 			} else {
 				i--;	
 			}
-		} else {
-			i--;	
 		}
+
+		clearTimeout(timeout);
+		smokeweedaudio.currentTime = 0.4 ;
+		$("#smokeweedeverydaygif").removeClass("disabled") .attr("src", smokeweedgif.src);
+		smokeweedaudio.play();
+
+		timeout = setTimeout(function() {
+			$("#smokeweedeverydaygif").addClass("disabled");
+		}, 1400);
 	}
-
-	clearTimeout(timeout);
-	smokeweedaudio.currentTime = 0.4 ;
-	$("#smokeweedeverydaygif").removeClass("disabled") .attr("src", smokeweedgif.src);
-	smokeweedaudio.play();
-
-	timeout = setTimeout(function() {
-		$("#smokeweedeverydaygif").addClass("disabled");
-	}, 1400);
-}
+});
