@@ -80,8 +80,8 @@ $(document).ready(function() {
 	function reset() {
 		var hitmarkers = $(".hitmarker");
 		var eyes = ($(".eye"));
-		tripleAudio.pause();
 		tripleAudio.currentTime = 0;
+		tripleAudio.pause();
 		
 		for (var i = 0; i < hitmarkers.length; i++) {
 			console.log(i);
