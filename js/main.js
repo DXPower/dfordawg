@@ -7,6 +7,7 @@ $(document).ready(function() {
 	var hitmarker = $("#hitmarkerTemplate");
 	var eye = $("#eye");
 	var hitmarkerAudio = document.getElementById("hitmarkerAudio");
+	var tripleAudio = document.getElementById("tripleAudio");
 	var timeout;
 	
 	$(document).keydown(function(e) {
@@ -40,6 +41,9 @@ $(document).ready(function() {
 		hits.push([e.clientX, e.clientY]);
 		
 		if (hits.length == 3) {
+			tripleAudio.pause();
+			tripleAudio.currentTime = 0;
+			tripleAudio.play();
 			var base = averagePoint(hits[1], hits[2]);
 			var w = distance(hits[1], hits[2]);
 			var h = distance(hits[0], base);
