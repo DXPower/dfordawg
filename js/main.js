@@ -35,7 +35,8 @@ $(document).ready(function() {
 		var positionLeft = e.clientX - hitmarkerImage.width() / 2;
 		var positionTop = e.clientY - hitmarkerImage.height() / 2;
 		
-		var hitTemp = hitmarker.clone().appendTo(document.body).css({'position' : 'absolute', 'left' : positionLeft, 'top' : positionTop}).addClass("hitmarker").removeClass("disabled");
+		var hitTemp = hitmarker.clone();
+		hitTemp.appendTo(document.body).css({'position' : 'absolute', 'left' : positionLeft, 'top' : positionTop}).addClass("hitmarker").removeClass("disabled");
 		hitmarkerAudio.play();
 		
 		hits.push([e.clientX, e.clientY, hitTemp]);
