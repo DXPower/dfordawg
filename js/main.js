@@ -51,9 +51,9 @@ $(document).ready(function() {
 			var topP = hits[0][0] - w / 2;
 			var a = angle360(hits[1][0], hits[1][1], hits[2][0], hits[2][1]);
 			eye.clone().appendTo(document.body).css({'position' : 'absolute', 'left' : topP - (Math.cos(a) * (h/2)), 'top' : hits[0][1] - (Math.sin(a) * (h/2)), 'height' : h, 'width' : w}).addClass("eye").removeClass("disabled");
-    			hits[0][3].addClass("eye").removeClass("hitmarker");
+    			/*hits[0][3].addClass("eye").removeClass("hitmarker");
 			hits[1][3].addClass("eye").removeClass("hitmarker");
-			hits[2][3].addClass("eye").removeClass("hitmarker");
+			hits[2][3].addClass("eye").removeClass("hitmarker");*/
 			
 			console.log(a);
 			$('#eye').css('transform','rotate(' + a + 'deg)');
